@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("article")
+    context = {
+        'app_name': 'Приложение: Список Статей (article)',
+        'page_title': 'Главная страница приложения статей',
+    }
+    return render(request, 'article/index.html', context=context)
